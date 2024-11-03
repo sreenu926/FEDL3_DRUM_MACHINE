@@ -389,6 +389,9 @@
       );
     }
   }
+
+      // Finally, it uses ReactDOM.render to render the main app component (o) into the element with the ID "root" in the HTML.
+      
   ReactDOM.render(
     React.createElement(o, null),
     document.getElementById("root")
