@@ -2,6 +2,11 @@
 
 !(function () {
   "use strict"; // It uses the "use strict"; directive to enforce stricter JavaScript coding practices.
+  
+  // Two arrays are defined:
+      // e: This contains information for the "Heater Kit" drum sounds, including key codes, trigger keys, IDs, and URLs.
+      // t: Similar to e, but for the "Smooth Piano Kit" sounds.
+  
   const e = [
       {
         keyCode: 81,
