@@ -1,14 +1,13 @@
-// The code starts with an Immediately Invoked Function Expression (IIFE) to encapsulate everything within its scope.
+      // 1. Initial Setup:
+      // The code starts with an Immediately Invoked Function Expression (IIFE) to encapsulate everything within its scope.
 
 !(function () {
+  
   "use strict"; // It uses the "use strict"; directive to enforce stricter JavaScript coding practices.
   
-  // Two arrays are defined:
-      // e: This contains information for the "Heater Kit" drum sounds, including key codes, trigger keys, IDs, and URLs.
-      // t: Similar to e, but for the "Smooth Piano Kit" sounds.
-  // Two objects define styles for different elements:
-      //   a: Style for the active pad (orange background with shadow).
-      //   s: Style for the inactive pad (white background with shadow).
+    // Two arrays are defined:
+        // e: This contains information for the "Heater Kit" drum sounds, including key codes, trigger keys, IDs, and URLs.
+        // t: Similar to e, but for the "Smooth Piano Kit" sounds.
   
   const e = [
       {
@@ -66,6 +65,10 @@
         url: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3",
       },
     ],
+
+        // t array: Similar to e array, but for the "Smooth Piano Kit" sounds.
+        // including key codes, trigger keys, IDs, and URLs.
+    
     t = [
       {
         keyCode: 81,
@@ -122,6 +125,11 @@
         url: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
       },
     ],
+
+        // Two objects define styles for different elements:
+            //   a: Style for the active pad (orange background with shadow).
+            //   s: Style for the inactive pad (white background with shadow).
+    
     a = {
       backgroundColor: "orange",
       boxShadow: "0 3px orange",
@@ -133,6 +141,15 @@
       marginTop: 10,
       boxShadow: "0 0 3px 3px black",
     };
+
+        // 2. Drum Pad Component: This defines a React component class named r, representing a single drum pad.
+            // It inherits from React.Component and has several functions:
+            // constructor: Initializes the component's state with the pad style (s for inactive) and binds functions to this.
+            // componentDidMount: Adds a key press event listener to the document when the component mounts.
+            // componentWillUnmount: Removes the key press event listener when the component unmounts.
+            // handleKeyPress: Checks if the pressed key code matches the pad's key code and triggers playSound if it does.
+            // activatePad: Changes the pad style based on power state and click interaction.
+            // playSound: Plays the associated audio sample, updates the display, and sets a timeout to reset the pad style.
   
   class r extends React.Component {
     constructor(e) {
@@ -175,6 +192,11 @@
         setTimeout(() => this.activatePad(), 100),
         this.props.updateDisplay(this.props.clipId.replace(/-/g, " "));
     }
+
+        // The render function returns a div element with the following children:
+            // Another div with the audio sample (audio element) referenced by the key trigger.
+            // The key trigger character displayed on the pad.
+    
     render() {
       return React.createElement(
         "div",
@@ -184,15 +206,18 @@
           onClick: this.playSound,
           style: this.state.padStyle,
         },
-        React.createElement("audio", {
-          className: "clip",
-          id: this.props.keyTrigger,
-          src: this.props.clip,
-        }),
-        this.props.keyTrigger
+        
+          React.createElement("audio", {
+            className: "clip",
+            id: this.props.keyTrigger,
+            src: this.props.clip,
+          }),
+          
+          this.props.keyTrigger
       );
     }
   }
+  
   class i extends React.Component {
     constructor(e) {
       super(e);
