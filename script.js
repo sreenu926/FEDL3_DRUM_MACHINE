@@ -6,6 +6,9 @@
   // Two arrays are defined:
       // e: This contains information for the "Heater Kit" drum sounds, including key codes, trigger keys, IDs, and URLs.
       // t: Similar to e, but for the "Smooth Piano Kit" sounds.
+  // Two objects define styles for different elements:
+      //   a: Style for the active pad (orange background with shadow).
+      //   s: Style for the inactive pad (white background with shadow).
   
   const e = [
       {
@@ -130,6 +133,7 @@
       marginTop: 10,
       boxShadow: "0 0 3px 3px black",
     };
+  
   class r extends React.Component {
     constructor(e) {
       super(e),
