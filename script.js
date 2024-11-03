@@ -1,5 +1,7 @@
+// The code starts with an Immediately Invoked Function Expression (IIFE) to encapsulate everything within its scope.
+
 !(function () {
-  "use strict";
+  "use strict"; // It uses the "use strict"; directive to enforce stricter JavaScript coding practices.
   const e = [
       {
         keyCode: 81,
