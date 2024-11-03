@@ -265,13 +265,6 @@
                   // currentPadBankId: String representing the current pad bank name ("Heater Kit").
                   // sliderVal: Number representing the volume (initially 0.3).
       
-                  // This class also has several functions for handling user interactions:
-                  // powerControl: Toggles the power state and resets the display.
-                  // selectBank: Switches between the two pad banks ("Heater Kit" and "Smooth Piano Kit") and updates the display.
-                  // displayClipName: Updates the display with the name of the played clip (when power is on).
-                  // adjustVolume: Adjusts the audio volume based on the slider input and updates the display temporarily.
-                  // clearDisplay: Clears the temporary display message after a timeout.
-      
   class o extends React.Component {
     constructor(t) {
       super(t),
@@ -288,6 +281,14 @@
         (this.powerControl = this.powerControl.bind(this)),
         (this.clearDisplay = this.clearDisplay.bind(this));
     }
+
+        // This class also has several functions for handling user interactions:
+                  // powerControl: Toggles the power state and resets the display.
+                  // selectBank: Switches between the two pad banks ("Heater Kit" and "Smooth Piano Kit") and updates the display.
+                  // displayClipName: Updates the display with the name of the played clip (when power is on).
+                  // adjustVolume: Adjusts the audio volume based on the slider input and updates the display temporarily.
+                  // clearDisplay: Clears the temporary display message after a timeout.
+        
     powerControl() {
       this.setState({
         power: !this.state.power,
