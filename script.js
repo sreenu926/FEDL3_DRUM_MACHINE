@@ -217,7 +217,11 @@
       );
     }
   }
-  
+
+      // 3. Pad Bank Component: This defines a React component class named i that represents a collection of drum pads (a bank).
+            // The render function iterates through the currentPadBank prop (either e or t) and renders a DrumPad component for each item.
+            // It wraps all the rendered DrumPad components inside a div with the class name pad-bank.
+      
   class i extends React.Component {
     constructor(e) {
       super(e);
@@ -252,6 +256,8 @@
       );
     }
   }
+
+      
   class o extends React.Component {
     constructor(t) {
       super(t),
