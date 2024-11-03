@@ -257,6 +257,28 @@
     }
   }
 
+// 4. Main App Component: This defines a React component class named o that represents the entire drum machine application.
+//       The constructor initializes the component's state with various properties:
+//       power: Boolean indicating power on/off (initially on).
+//       display: String shown on the display (initially a space character).
+//       currentPadBank: Array containing the current drum pad data (initially "Heater Kit").
+//       currentPadBankId: String representing the current pad bank name ("Heater Kit").
+//       sliderVal: Number representing the volume (initially 0.3).
+//       This class also has several functions for handling user interactions:
+//       powerControl: Toggles the power state and resets the display.
+//       selectBank: Switches between the two pad banks ("Heater Kit" and "Smooth Piano Kit") and updates the display.
+//       displayClipName: Updates the display with the name of the played clip (when power is on).
+//       adjustVolume: Adjusts the audio volume based on the slider input and updates the display temporarily.
+//       clearDisplay: Clears the temporary display message after a timeout.
+//       The render function defines the main layout and components of the app:
+//       It renders a PadBank component with the current pad bank data.
+//       It creates the logo section with the app name ("NAGA").
+//       It builds the control section with:
+//       A power switch button.
+//       A display area for showing the current clip name or volume.
+//       A volume slider to adjust the sound level.
+//       A button to switch between drum pad banks.
+//       A title displaying "DRUM MACHINE".
       
   class o extends React.Component {
     constructor(t) {
